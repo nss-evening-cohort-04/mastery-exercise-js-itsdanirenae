@@ -1,7 +1,31 @@
 
 var button = document.getElementById("button");
+button.addEventListener("click", noEntry);
 
-button.addEventListener("click", userInput);
+var pushIt = document.getElementById("character");
+pushIt.addEventListener("keypress", pushReturn);
+
+var pushItAgain = document.getElementById("rows");
+pushItAgain.addEventListener("keypress", pushReturn);
+
+function pushReturn(e){
+  if (e.keyCode == 13){
+   noEntry()
+ }
+}
+
+function noEntry(){
+    if(!character.value) {
+      alert("Enter something!")
+  }
+    else if(!rows.value) {
+      alert("Enter something!")
+  }
+    else{
+      userInput();
+  }
+ }
+
 
   var objectHolder = {
     rowsEntered : "",
@@ -23,7 +47,5 @@ function buildPyramid(myInput) {
     console.log(spacez + characterz);
   }
 }
-
-
 
 
